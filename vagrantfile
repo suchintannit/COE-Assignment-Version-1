@@ -73,7 +73,7 @@ Vagrant.configure("2") do |config|
   echo "output file cleared############################"
   echo "Starting the Kubernetes Cluster on Master Node############################################\n"
   # Start cluster
-  sudo kubeadm init --apiserver-advertise-address=10.0.0.10 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=mem | grep "kubeadm join" > ${OUTPUT_FILE}
+  sudo kubeadm init --apiserver-advertise-address=172.31.42.117 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all| grep "kubeadm join" > ${OUTPUT_FILE}
   
   echo "Change the owner of config file#############################################\n"
   # Configure kubectl
